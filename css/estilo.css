@@ -1,0 +1,105 @@
+<header>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: greenyellow
+        }
+
+        header {
+            background-color: #0d4601;
+            overflow: hidden;
+        }
+
+        nav {
+            float: left;
+            width: 33.33%;
+            box-sizing: border-box;
+        }
+
+        nav a {
+            display: block;
+            color: rgb(33, 243, 6);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: rgb(163, 241, 6);
+            color: black;
+        }
+  
+    /* Reset de Estilos */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    
+ 
+
+/* Estilos Gerais */
+header {
+    background-color: #0d4601;
+    color: rgb(32, 236, 4);
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+	padding: 0px;
+	margin: 0px;
+	background-color: rgb(7, 85, 0);
+	list-style: none; /*retila as bolinhas*/
+	font-size: 18px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #2cf305;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#banner {
+    margin-top: 20px;
+}
+
+#banner img {
+    width: 100%;
+}
+
+#corpo {
+    margin: 20px;
+    color: rgb(8, 71, 2);
+}
+
+.conteudo {
+    text-align: center;
+}
+
+footer {
+    background-color: #0d4601;
+    color: #06e706;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
