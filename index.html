@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="shortcut icon" href="assets/img/logoea.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
     <title>Entre Rios</title>
 </head>
-<body style="height: 1000px;">	
+<body style="height: auto;">	
     <header>
         <nav>
-            <a href="360 view/index.html">Visão 360º da RPPN</a>
+            <a href="#view360">Visão 360º da RPPN</a>
         </nav>
     </header>
     
+    
+
     <section id="corpo" style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
         <p style="text-align: center; width: 60vw;">RPPN é uma modalidade de Unidade de Conservação de domínio privado (pessoa física ou jurídica), gravada com perpetuidade na matrícula do imóvel e sua criação não afeta a titularidade do imóvel. O principal objetivo de uma RPPN é conservar a diversidade biológica
 		Contribuem para a ampliação das áreas protegidas no país;
@@ -22,13 +25,22 @@
         Possibilitam a participação da iniciativa privada no esforço nacional de conservação;
         Contribuem para a proteção da biodiversidade dos biomas paranaenses.</p>
         <div class="conteudo" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <iframe style="width: 75vw; height: 75vh;" src="https://www.youtube.com/embed/qk-q1HzjjDc?si=S1xK37j_O3pR4Zic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe style="width: 50vw; height: 50vh;" src="https://www.youtube.com/embed/qk-q1HzjjDc?si=S1xK37j_O3pR4Zic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <h1>360º view</h1>
+        <div class="main-container" id="view360">
+            <div class="image-container">
+            </div>
         </div>
     </section>
 
-    
-    <footer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatibus exercitationem.</p>
-	</footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"
+      integrity="sha512-uWKImujbh9CwNa8Eey5s8vlHDB4o1HhrVszkympkm5ciYTnUEQv3t4QHU02CUqPtdKTg62FsHo12x63q6u0wmg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/panolens.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
