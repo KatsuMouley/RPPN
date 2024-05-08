@@ -4,7 +4,7 @@ body {
 
 .main-container {
   display: flex;
-  height: 500px;
+  height: 800px;
   margin-bottom: 50px;
   align-items: center;
   background: #111;
@@ -13,8 +13,8 @@ body {
 
 .main-container .image-container {
   /* flex: 1; */
-  height: 500px;
-  width: 600px;
+  height: 800px;
+  width: 100vw;
 }
 
 .main-container h1 {
