@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  background-color: #101213;
+}
+.view360{
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  height: 90vh;
+  background-image: url("../img/WebViewersLogo.png"); /* The image used */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.main-container .image-container {
+  /* flex: 1; */
+  height: 90vh;
+  width: 90vw;
+  animation-name: Carregando;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+  transition: all 0.15s, top 0.7s ease;
+  animation-play-state: running;
+}
+
+@keyframes Carregando {
+  0%{
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
