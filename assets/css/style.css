@@ -70,13 +70,13 @@ body {
 */
 
 .buttonGalery{
+  background-color: transparent;
+  border: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: transparent;
-  border: none;
   position: fixed;
   top: 20px;
   transition: all 0.1s;
