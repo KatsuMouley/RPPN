@@ -1,14 +1,30 @@
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  background-color: #101213;
+  background-color: #080e06;
+
 }
+
+/*
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+  360 VIEW
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+*/
+
 .view360{
   display: flex;
-  justify-content: center;
 }
 
 .main-container {
-  height: 90vh;
+  height: 80vh;
   background-image: url("../img/WebViewersLogo.png"); /* The image used */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -16,10 +32,14 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.view360:hover{
+  cursor: move;
+}
+
 .main-container .image-container {
   /* flex: 1; */
-  height: 90vh;
-  width: 90vw;
+  height: 80vh;
+  width: 80vw;
   animation-name: Carregando;
   animation-duration: 8s;
   animation-iteration-count: 1;
@@ -39,3 +59,104 @@ body {
   }
 }
 
+/*
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+  SHOW GALERY
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+*/
+
+.buttonGalery{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  top: 20px;
+  transition: all 0.1s;
+}
+
+.buttonGalery h1{
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  font-weight: lighter;
+  color: white;
+}
+
+.arrow {
+  font-size: 50px;
+  color: #5AC65E;
+}
+
+.buttonGalery:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.buttonGalery:active{
+  cursor: pointer;
+  transform: scale(1);
+}
+
+
+/*
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+  GALERY
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+*/
+
+.fixed-div {
+  position: fixed; /* Posiciona a div fixa na tela */
+  background-color: #080e06;
+  width: 99vw; /* Largura: 90% da viewport */
+  height: 99vh; /* Altura: 90% da viewport */
+  z-index: 10; /* Garante que a div esteja na frente de todos os outros elementos */
+}
+
+.grid-container {
+  display: flex; /* Ativa o layout flexbox para o container */
+  flex-wrap: wrap; /* Permite que os itens quebrem em linhas */
+  width: 100%; /* Largura total do grid */
+  height: 100%;
+  margin: 0 auto; /* Centraliza o grid na tela */
+  overflow-y: auto;
+}
+
+.grid-container::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex; /* Ativa o layout flexbox para cada linha */
+}
+.block {
+  width: 386px; /* Largura do bloco: 640px */
+  height: 325px; /* Altura do bloco: 360px */
+  margin: 10px; /* Espaçamento entre os blocos */
+  background-image: url("../img/WebViewersLogo.png"); /* The image used */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Distribui os blocos uniformemente */
+  gap: 50px;
+}
+
+.block {
+  width: 480px; /* Largura do bloco: 480px (640px / 4) */
+}
