@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const imagePath = `${folder}/imagem (${i}).jpg`;
           imageExists(imagePath, (exists) => {
               if (exists) {
-                  const block = `<div class="block"><img src="${imagePath}" alt="Image ${i}"></div>`;
+                  const block = `<div class="block"><img src="${imagePath}" loading="lazy" alt="Image ${i}"></div>`;
                   gridContainer.insertAdjacentHTML('beforeend', block);
                   i++;
                   loadNextImage();
