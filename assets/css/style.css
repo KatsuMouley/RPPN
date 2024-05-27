@@ -114,6 +114,7 @@ body {
 
 .button360{
   background-color: rgba(14, 28, 17, 0.8);
+  padding: 10px;
   border-radius: 8px;
   border: none;
   display: flex;
@@ -193,8 +194,8 @@ body {
   display: flex; /* Ativa o layout flexbox para cada linha */
 }
 .block {
-  width: 386px; /* Largura do bloco: 640px */
-  height: 325px; /* Altura do bloco: 360px */
+  width: 200px;
+  height: 300px; /* Altura do bloco: 360px */
   margin: 10px; /* Espaçamento entre os blocos */
   background-image: url("../img/WebViewersLogo.png"); /* The image used */
   background-position: center; /* Center the image */
