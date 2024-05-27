@@ -169,3 +169,15 @@ document.addEventListener('DOMContentLoaded', function() {
   requestAnimationFrame(updateOpacity);
 
  //Fim do sistema de opacidade
+
+ function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+if (isMobileDevice()) {
+  // O dispositivo é um dispositivo móvel
+  console.alert("Este dispositivo é um dispositivo móvel.");
+} else {
+  // O dispositivo não é um dispositivo móvel
+  console.alert("Este dispositivo não é um dispositivo móvel.");
+}
