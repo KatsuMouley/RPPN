@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const folder = 'Gallery';
       
       function loadNextImage() {
-          const imagePath = `${folder}/imagem (${i}).SVGs`;
+          const imagePath = `${folder}/imagem (${i}).jpg`;
           imageExists(imagePath, (exists) => {
               if (exists) {
                   const block = `<div class="block"><img src="${imagePath}" loading="lazy" alt="Image ${i}"></div>`;
