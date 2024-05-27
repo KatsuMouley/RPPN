@@ -1,3 +1,4 @@
+
 const panoramaImage = new PANOLENS.ImagePanorama("images/panorama.jpeg");
 const imageContainer = document.querySelector(".image-container");
 
@@ -173,11 +174,13 @@ document.addEventListener('DOMContentLoaded', function() {
  function isMobileDevice() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
-
-if (isMobileDevice()) {
-  // O dispositivo é um dispositivo móvel
-  console.alert("Este dispositivo é um dispositivo móvel.");
-} else {
-  // O dispositivo não é um dispositivo móvel
-  console.alert("Este dispositivo não é um dispositivo móvel.");
+function identifyDevice() {
+    if (isMobileDevice()) {
+    // O dispositivo é um dispositivo móvel
+    alert("Este dispositivo é um dispositivo móvel.");
+    } else {
+    // O dispositivo não é um dispositivo móvel
+    alert("Este dispositivo não é um dispositivo móvel.");
+    } 
 }
+identifyDevice();
