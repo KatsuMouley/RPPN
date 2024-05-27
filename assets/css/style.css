@@ -76,11 +76,9 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  position: fixed;
-  top: 20px;
   transition: all 0.1s;
 }
+
 
 .buttonGalery h1{
   font-size: 18px;
@@ -104,6 +102,54 @@ body {
   transform: scale(1);
 }
 
+/*
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+  SHOW 360
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+    -----------------------------------------------------------------------
+*/
+
+.button360{
+  background-color: rgba(14, 28, 17, 0.8);
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 11; /* Garante que a div esteja na frente de todos os outros elementos */
+  position: fixed;
+  bottom: -100px;
+  transition: bottom ease 1s ;
+}
+.button360.visible{
+  bottom: 30px;
+}
+
+.button360 h1{
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  font-weight: lighter;
+  color: white;
+}
+
+.arrow {
+  font-size: 50px;
+  color: #5AC65E;
+}
+
+.button360:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.button360:active{
+  cursor: pointer;
+  transform: scale(1);
+}
 
 /*
     -----------------------------------------------------------------------
@@ -121,6 +167,9 @@ body {
   width: 99vw; /* Largura: 90% da viewport */
   height: 99vh; /* Altura: 90% da viewport */
   z-index: 10; /* Garante que a div esteja na frente de todos os outros elementos */
+  position: fixed;
+  top: -100vh;
+  transition: all ease 1s;
 }
 
 .grid-container {
@@ -130,6 +179,10 @@ body {
   height: 100%;
   margin: 0 auto; /* Centraliza o grid na tela */
   overflow-y: auto;
+}
+
+.fixed-div.visible{
+  top: 0;
 }
 
 .grid-container::-webkit-scrollbar {

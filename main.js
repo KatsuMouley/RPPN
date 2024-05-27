@@ -49,3 +49,18 @@ function criarBlocoImagem(imagem) {
 }
 
 window.addEventListener("load", carregarImagens); // Executa a função carregarImagens quando a página carregar
+
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.getElementById('ShowGaleria');
+  const Show360 = document.getElementById('Show360');
+  const galeria = document.getElementById('Galeria');
+
+  toggleButton.addEventListener('click', function() {
+    galeria.classList.toggle('visible');
+    Show360.classList.toggle('visible');
+  });
+  Show360.addEventListener('click', function() {
+    galeria.classList.toggle('visible');
+    Show360.classList.toggle('visible');
+  });
+});
