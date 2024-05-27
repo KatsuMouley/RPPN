@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const folder = 'Gallery';
       
       function loadNextImage() {
-          const imagePath = `${folder}/imagem (${i}).jpg`;
+          const imagePath = `${folder}/imagem (${i}).SVGs`;
           imageExists(imagePath, (exists) => {
               if (exists) {
                   const block = `<div class="block"><img src="${imagePath}" loading="lazy" alt="Image ${i}"></div>`;
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
                   i++;
                   loadNextImage();
               } else {
-                  console.log("All images loaded or no more images found.");
-              }
+                console.log("All images loaded or no more images found.");
+            }
           });
       }
 
