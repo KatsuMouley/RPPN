@@ -24,7 +24,7 @@ body {
 }
 
 .main-container {
-  height: 75vh;
+  height: 80vh;
   background-image: url("../img/WebViewersLogo.png"); /* The image used */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -38,7 +38,7 @@ body {
 
 .main-container .image-container {
   /* flex: 1; */
-  height: 75vh;
+  height: 80vh;
   width: 80vw;
   animation-name: Carregando;
   animation-duration: 8s;
