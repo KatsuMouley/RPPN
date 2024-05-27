@@ -64,3 +64,43 @@ document.addEventListener('DOMContentLoaded', function() {
     Show360.classList.toggle('visible');
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const gridContainer = document.getElementById("RowsGaleria");
+
+  // Function to check if an image exists
+  function imageExists(url, callback) {
+      const img = new Image();
+      img.onload = () => callback(true);
+      img.onerror = () => callback(false);
+      img.src = url;
+  }
+
+  // Function to load images from the "Gallery" folder
+  function loadImages() {
+      let i = 1; // Starting image index
+      const folder = 'Gallery';
+      
+      function loadNextImage() {
+          const imagePath = `${folder}/imagem (${i}).jpg`;
+          imageExists(imagePath, (exists) => {
+              if (exists) {
+                  const block = `<div class="block"><img src="${imagePath}" alt="Image ${i}"></div>`;
+                  gridContainer.insertAdjacentHTML('beforeend', block);
+                  i++;
+                  loadNextImage();
+              } else {
+                  console.log("All images loaded or no more images found.");
+              }
+          });
+      }
+
+      // Start loading images
+      loadNextImage();
+  }
+
+  // Load images when the page loads
+  loadImages();
+});
+
+
