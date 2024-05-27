@@ -76,6 +76,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   transition: all 0.1s;
   margin: 10px;
 }
@@ -122,6 +123,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   z-index: 11; /* Garante que a div esteja na frente de todos os outros elementos */
   position: fixed;
   bottom: -100px;
@@ -132,7 +134,7 @@ body {
 }
 
 .button360 h1{
-  font-size: 18px;
+  font-size: 26px;
   font-family: Arial, sans-serif;
   font-weight: lighter;
   color: white;
@@ -216,7 +218,7 @@ body {
 
 .block:hover{
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .block:active{
   transition: all 0.1s;

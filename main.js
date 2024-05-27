@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const gridContainer = document.getElementById("RowsGaleria");
 
-  // Function to check if an image exists
   function imageExists(url, callback) {
       const img = new Image();
       img.onload = () => callback(true);
@@ -76,31 +75,97 @@ document.addEventListener('DOMContentLoaded', function() {
       img.src = url;
   }
 
-  // Function to load images from the "Gallery" folder
   function loadImages() {
-      let i = 1; // Starting image index
+      let i = 1;
       const folder = 'Gallery';
-      
+
       function loadNextImage() {
           const imagePath = `${folder}/imagem (${i}).jpg`;
           imageExists(imagePath, (exists) => {
               if (exists) {
-                  const block = `<div class="block"><img src="${imagePath}" loading="lazy" alt="Image ${i}"></div>`;
+                  const block = `<div class="block"><img src="${imagePath}" alt="Image ${i}" loading="lazy"></div>`;
                   gridContainer.insertAdjacentHTML('beforeend', block);
                   i++;
                   loadNextImage();
               } else {
-                console.log("All images loaded or no more images found.");
-            }
+                  console.log("All images loaded or no more images found.");
+                  adjustOpacity(); // Chamando após todas as imagens serem carregadas
+              }
           });
       }
 
-      // Start loading images
       loadNextImage();
   }
 
-  // Load images when the page loads
   loadImages();
+
 });
 
 
+
+// Sistema de opacidade, caso queira desabilitar, basta apenas colocar /**/ nesta função
+
+  function calculateRows() {
+      const blocks = document.querySelectorAll('.block');
+      const rows = [];
+      let currentRowTop = null;
+
+      blocks.forEach(block => {
+          const blockTop = block.getBoundingClientRect().top;
+
+          if (currentRowTop === null || blockTop !== currentRowTop) {
+              rows.push([]);
+              currentRowTop = blockTop;
+          }
+
+          rows[rows.length - 1].push(block);
+      });
+
+      return rows;
+  }
+
+  function adjustOpacity() {
+      const rows = calculateRows();
+      const viewportHeight = window.innerHeight;
+
+      rows.forEach((row, index) => {
+          const rowTop = row[0].getBoundingClientRect().top;
+          const rowBottom = row[0].getBoundingClientRect().bottom;
+
+          if (rowTop < viewportHeight && rowBottom > 0) {
+              // Calcula a opacidade com base na posição na tela
+              const distanceFromTop = rowTop;
+              const distanceFromBottom = viewportHeight - rowBottom;
+              let opacity = 1;
+
+              if (distanceFromTop > 0) {
+                  opacity = 1 - (distanceFromTop / viewportHeight);
+              } else if (distanceFromBottom > 0) {
+                  opacity = 1 - (distanceFromBottom / viewportHeight);
+              }
+
+              // Garante que a opacidade não seja menor que 0.25 para as linhas visíveis
+              opacity = Math.max(opacity, 0.75);
+
+              row.forEach(block => {
+                  block.style.opacity = opacity;
+              });
+          } else {
+              // Linhas completamente fora da viewport terão opacidade 0
+              row.forEach(block => {
+                  block.style.opacity = 0.2;
+              });
+          }
+      });
+  }
+
+  // Função para chamar adjustOpacity() constantemente
+  function updateOpacity() {
+      adjustOpacity();
+      requestAnimationFrame(updateOpacity); // Chama a função novamente na próxima animação
+  }
+
+  // Chama a função updateOpacity() pela primeira vez
+  requestAnimationFrame(updateOpacity);
+
+ //Fim do sistema de opacidade
