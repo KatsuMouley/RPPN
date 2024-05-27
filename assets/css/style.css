@@ -239,8 +239,8 @@ body {
 
 @media screen and (max-width: 800px){
   .block {
-    width: 260px;
-    height: 220px; /* Altura do bloco: 360px */
+    width: 360px;
+    height: 240px; /* Altura do bloco: 360px */
   }
   
 }
