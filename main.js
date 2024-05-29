@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
               }
 
               // Garante que a opacidade não seja menor que 0.25 para as linhas visíveis
-              opacity = Math.max(opacity, 0.75);
+              opacity = Math.max(opacity, 0.80);
 
               row.forEach(block => {
                   block.style.opacity = opacity;
@@ -171,16 +171,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
  //Fim do sistema de opacidade
 
- function isMobileDevice() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-function identifyDevice() {
-    if (isMobileDevice()) {
-    // O dispositivo é um dispositivo móvel
-    alert("Este dispositivo é um dispositivo móvel.");
-    } else {
-    // O dispositivo não é um dispositivo móvel
-    alert("Este dispositivo não é um dispositivo móvel.");
-    } 
-}
-identifyDevice();
+//  function isMobileDevice() {
+//   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+// }
+// function identifyDevice() {
+//     if (isMobileDevice()) {
+//     // O dispositivo é um dispositivo móvel
+//     alert("Este dispositivo é um dispositivo móvel.");
+//     } else {
+//     // O dispositivo não é um dispositivo móvel
+//     alert("Este dispositivo não é um dispositivo móvel.");
+//     } 
+// }
+// identifyDevice();
